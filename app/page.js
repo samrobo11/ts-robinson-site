@@ -25,11 +25,11 @@ export default function Home() {
           background: "#f7f7f7",
         }}
       >
-        <img
-          src="/logo.png"
-          alt="T&S Robinson logo"
-          style={{ width: 150, marginBottom: 20 }}
-        />
+        <img 
+  src="/logo.png"
+  alt="T&S Robinson logo"
+  style={{ width: 300, marginBottom: 20 }}
+/>
         <h1 style={{ fontSize: 40, marginBottom: 10 }}>
           Fresh Fruit & Vegetable Wholesale
         </h1>
