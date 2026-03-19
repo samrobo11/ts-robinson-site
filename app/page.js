@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main style={{ fontFamily: "Arial, sans-serif", margin: 0 }}>
@@ -25,11 +27,13 @@ export default function Home() {
           background: "#f7f7f7",
         }}
       >
-        <img 
-  src="/logo.png"
-  alt="T&S Robinson logo"
-  style={{ width: 300, marginBottom: 20 }}
-/>
+        <Image
+          src="/logo.png"
+          alt="T&S Robinson logo"
+          width={300}
+          height={300}
+          priority
+        />
         <h1 style={{ fontSize: 40, marginBottom: 10 }}>
           Fresh Fruit & Vegetable Wholesale
         </h1>
