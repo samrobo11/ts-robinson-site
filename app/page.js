@@ -215,7 +215,28 @@ export default function Home() {
     WhatsApp Sam
   </a>
 </div>
-      </section>
+           </section>
+
+      <a
+        href="https://wa.me/447701256670"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          position: "fixed",
+          bottom: 20,
+          right: 20,
+          background: "#25D366",
+          color: "#fff",
+          padding: "14px 18px",
+          borderRadius: 999,
+          textDecoration: "none",
+          fontWeight: 700,
+          boxShadow: "0 6px 18px rgba(0,0,0,0.2)",
+          zIndex: 1000,
+        }}
+      >
+        WhatsApp Us
+      </a>
     </main>
   );
 }
