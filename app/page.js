@@ -143,59 +143,78 @@ export default function Home() {
           <div><strong>Sam:</strong> 07701 256670</div>
         </div>
 
-        <div style={{ marginTop: 30 }}>
-          <a
-            href="tel:07931380496"
-            style={{
-              display: "inline-block",
-              marginRight: 12,
-              marginBottom: 12,
-              background: "#2e3192",
-              color: "#fff",
-              padding: "12px 20px",
-              borderRadius: 10,
-              textDecoration: "none",
-              fontWeight: 700,
-            }}
-          >
-            Call Tom
-          </a>
+        <div style={{ marginTop: 30, display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+  <a
+    href="tel:07931380496"
+    style={{
+      display: "inline-block",
+      marginRight: 12,
+      marginBottom: 12,
+      background: "#2e3192",
+      color: "#fff",
+      padding: "12px 20px",
+      borderRadius: 10,
+      textDecoration: "none",
+      fontWeight: 700,
+    }}
+  >
+    Call Tom
+  </a>
 
-          <a
-            href="tel:07701256670"
-            style={{
-              display: "inline-block",
-              marginRight: 12,
-              marginBottom: 12,
-              background: "#111827",
-              color: "#fff",
-              padding: "12px 20px",
-              borderRadius: 10,
-              textDecoration: "none",
-              fontWeight: 700,
-            }}
-          >
-            Call Sam
-          </a>
+  <a
+    href="tel:07701256670"
+    style={{
+      display: "inline-block",
+      marginRight: 12,
+      marginBottom: 12,
+      background: "#111827",
+      color: "#fff",
+      padding: "12px 20px",
+      borderRadius: 10,
+      textDecoration: "none",
+      fontWeight: 700,
+    }}
+  >
+    Call Sam
+  </a>
 
-          <a
-            href="https://wa.me/447931380496"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-block",
-              marginBottom: 12,
-              background: "#25D366",
-              color: "#fff",
-              padding: "12px 20px",
-              borderRadius: 10,
-              textDecoration: "none",
-              fontWeight: 700,
-            }}
-          >
-            WhatsApp Tom
-          </a>
-        </div>
+  <a
+    href="https://wa.me/447931380496"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-block",
+      marginRight: 12,
+      marginBottom: 12,
+      background: "#25D366",
+      color: "#fff",
+      padding: "12px 20px",
+      borderRadius: 10,
+      textDecoration: "none",
+      fontWeight: 700,
+    }}
+  >
+    WhatsApp Tom
+  </a>
+
+  <a
+    href="https://wa.me/447701256670"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-block",
+      marginBottom: 12,
+      background: "#25D366",
+      color: "#fff",
+      padding: "12px 20px",
+      borderRadius: 10,
+      textDecoration: "none",
+      fontWeight: 700,
+    }}
+  >
+    WhatsApp Sam
+  </a>
+</div>
       </section>
     </main>
   );
