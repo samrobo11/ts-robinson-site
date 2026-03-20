@@ -3,10 +3,10 @@ import Image from "next/image";
 const products = [
   "Fresh Fruit",
   "Fresh Vegetables",
-  "Wholesale Supply",
-  "Reliable Deliveries",
+  "Salads & Herbs",
+  "Potatoes & Onions",
   "Seasonal Produce",
-  "Business Orders",
+  "Wholesale Business Orders",
 ];
 
 const reasons = [
@@ -15,14 +15,28 @@ const reasons = [
     text: "Quality produce supplied with consistency, care, and a strong focus on freshness.",
   },
   {
-    title: "Reliable Service",
+    title: "Reliable Local Service",
     text: "Dependable supply for businesses that need stock on time and without hassle.",
   },
   {
-    title: "Trade Focused",
+    title: "Built For Trade",
     text: "Supplying shops, takeaways, restaurants, caterers, and other local businesses.",
   },
 ];
+
+const suppliedTo = [
+  "Restaurants",
+  "Takeaways",
+  "Retail Shops",
+  "Market Traders",
+  "Caterers",
+  "Local Businesses",
+];
+
+const whatsappSam =
+  "https://wa.me/447701256670?text=Hi%20I%E2%80%99m%20interested%20in%20ordering%20produce%20from%20T%26S%20Robinson";
+const whatsappTom =
+  "https://wa.me/447931380496?text=Hi%20I%E2%80%99m%20interested%20in%20ordering%20produce%20from%20T%26S%20Robinson";
 
 export default function Home() {
   return (
@@ -32,6 +46,7 @@ export default function Home() {
         margin: 0,
         color: "#111827",
         background: "#ffffff",
+        scrollBehavior: "smooth",
       }}
     >
       <div
@@ -52,11 +67,11 @@ export default function Home() {
           <Image
             src="/logo.png"
             alt="T&S Robinson logo"
-            width={46}
-            height={46}
+            width={48}
+            height={48}
           />
           <div>
-            <div style={{ fontWeight: 800, fontSize: 18 }}>T&S Robinson</div>
+            <div style={{ fontWeight: 900, fontSize: 18 }}>T&S Robinson</div>
             <div style={{ fontSize: 12, color: "#6b7280" }}>
               Fresh Fruit & Vegetable Wholesale
             </div>
@@ -68,7 +83,9 @@ export default function Home() {
             display: "flex",
             gap: 20,
             fontSize: 14,
-            fontWeight: 600,
+            fontWeight: 700,
+            flexWrap: "wrap",
+            justifyContent: "flex-end",
           }}
         >
           <a href="#home" style={{ textDecoration: "none", color: "#111827" }}>
@@ -79,6 +96,9 @@ export default function Home() {
           </a>
           <a href="#products" style={{ textDecoration: "none", color: "#111827" }}>
             Products
+          </a>
+          <a href="#delivery" style={{ textDecoration: "none", color: "#111827" }}>
+            Delivery
           </a>
           <a href="#contact" style={{ textDecoration: "none", color: "#111827" }}>
             Contact
@@ -95,12 +115,7 @@ export default function Home() {
             "linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #ecfdf5 100%)",
         }}
       >
-        <div
-          style={{
-            maxWidth: 1100,
-            margin: "0 auto",
-          }}
-        >
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div
             style={{
               display: "inline-block",
@@ -108,12 +123,12 @@ export default function Home() {
               borderRadius: 999,
               background: "#dbeafe",
               color: "#1d4ed8",
-              fontWeight: 700,
+              fontWeight: 800,
               fontSize: 13,
               marginBottom: 22,
             }}
           >
-            Trusted local wholesale supplier
+            Trusted wholesale supplier in Bradford
           </div>
 
           <div style={{ marginBottom: 20 }}>
@@ -132,11 +147,11 @@ export default function Home() {
               lineHeight: 1.1,
               margin: "0 0 18px",
               fontWeight: 900,
-              maxWidth: 900,
+              maxWidth: 920,
               marginInline: "auto",
             }}
           >
-            Fresh produce for businesses that need quality and reliability
+            Fresh produce for businesses that need quality, speed, and reliability
           </h1>
 
           <p
@@ -158,6 +173,7 @@ export default function Home() {
               justifyContent: "center",
               gap: 14,
               flexWrap: "wrap",
+              marginBottom: 26,
             }}
           >
             <a
@@ -177,6 +193,24 @@ export default function Home() {
             </a>
 
             <a
+              href={whatsappSam}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                background: "#25D366",
+                color: "#fff",
+                padding: "15px 24px",
+                borderRadius: 12,
+                textDecoration: "none",
+                fontWeight: 800,
+                boxShadow: "0 10px 30px rgba(37,211,102,0.22)",
+              }}
+            >
+              WhatsApp Us
+            </a>
+
+            <a
               href="#products"
               style={{
                 display: "inline-block",
@@ -191,6 +225,37 @@ export default function Home() {
             >
               View Products
             </a>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: 16,
+              maxWidth: 980,
+              margin: "30px auto 0",
+            }}
+          >
+            {[
+              "Units 27–29 St James's Market, Essex St, Bradford, BD4 7PN",
+              "Mon–Fri 5:00AM–10:00AM",
+              "Saturday 5:00AM–9:30AM",
+              "Sunday Closed",
+            ].map((item) => (
+              <div
+                key={item}
+                style={{
+                  background: "rgba(255,255,255,0.72)",
+                  border: "1px solid #e5e7eb",
+                  borderRadius: 16,
+                  padding: 16,
+                  fontWeight: 700,
+                  color: "#374151",
+                }}
+              >
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -242,12 +307,26 @@ export default function Home() {
                 lineHeight: 1.8,
                 fontSize: 18,
                 maxWidth: 700,
+                marginBottom: 18,
               }}
             >
               T&S Robinson is a trusted wholesale supplier of fresh fruit and
               vegetables. We provide quality produce with freshness, reliability,
               and competitive pricing, helping businesses get the stock they need
               with dependable service they can build around.
+            </p>
+
+            <p
+              style={{
+                color: "#4b5563",
+                lineHeight: 1.8,
+                fontSize: 18,
+                maxWidth: 700,
+              }}
+            >
+              Based in Bradford, we work with trade customers who need a supplier
+              they can count on for consistent stock, straightforward communication,
+              and local service.
             </p>
           </div>
 
@@ -271,14 +350,7 @@ export default function Home() {
                 gap: 12,
               }}
             >
-              {[
-                "Restaurants",
-                "Takeaways",
-                "Retail Shops",
-                "Market Traders",
-                "Caterers",
-                "Local Businesses",
-              ].map((item) => (
+              {suppliedTo.map((item) => (
                 <div
                   key={item}
                   style={{
@@ -431,6 +503,91 @@ export default function Home() {
       </section>
 
       <section
+        id="delivery"
+        style={{
+          padding: "85px 30px",
+          background: "#ffffff",
+        }}
+      >
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div
+            style={{
+              fontSize: 13,
+              fontWeight: 800,
+              letterSpacing: 1,
+              textTransform: "uppercase",
+              color: "#2563eb",
+              marginBottom: 14,
+              textAlign: "center",
+            }}
+          >
+            Delivery
+          </div>
+
+          <h2
+            style={{
+              fontSize: 38,
+              textAlign: "center",
+              marginBottom: 15,
+              fontWeight: 900,
+            }}
+          >
+            Local delivery available
+          </h2>
+
+          <p
+            style={{
+              textAlign: "center",
+              color: "#4b5563",
+              marginBottom: 36,
+              fontSize: 18,
+              maxWidth: 760,
+              marginInline: "auto",
+            }}
+          >
+            We offer delivery for businesses in local surrounding areas. Delivery
+            locations can be expanded or updated once you decide exactly which places
+            you want listed on the website.
+          </p>
+
+          <div
+            style={{
+              background: "#f9fafb",
+              border: "1px solid #e5e7eb",
+              borderRadius: 20,
+              padding: 28,
+              textAlign: "center",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+            }}
+          >
+            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 10 }}>
+              Need delivery information?
+            </div>
+            <div style={{ color: "#4b5563", lineHeight: 1.7, marginBottom: 20 }}>
+              Contact us directly to check delivery coverage and availability for your area.
+            </div>
+            <a
+              href={whatsappSam}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                background: "#25D366",
+                color: "#fff",
+                padding: "13px 22px",
+                borderRadius: 12,
+                textDecoration: "none",
+                fontWeight: 800,
+                boxShadow: "0 8px 24px rgba(37,211,102,0.2)",
+              }}
+            >
+              Ask About Delivery
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="contact"
         style={{
           padding: "85px 30px",
@@ -438,7 +595,7 @@ export default function Home() {
           background: "#ffffff",
         }}
       >
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div
             style={{
               fontSize: 13,
@@ -459,19 +616,70 @@ export default function Home() {
           <p
             style={{
               color: "#4b5563",
-              marginBottom: 25,
+              marginBottom: 35,
               fontSize: 18,
             }}
           >
-            For enquiries, orders, and wholesale supply.
+            For enquiries, orders, deliveries, and wholesale supply.
           </p>
 
-          <div style={{ fontSize: 20, lineHeight: 1.9, marginBottom: 24 }}>
-            <div>
-              <strong>Tom:</strong> 07931 380496
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: 18,
+              marginBottom: 30,
+            }}
+          >
+            <div
+              style={{
+                background: "#f9fafb",
+                border: "1px solid #e5e7eb",
+                borderRadius: 18,
+                padding: 22,
+              }}
+            >
+              <div style={{ fontWeight: 800, marginBottom: 8 }}>Address</div>
+              <div style={{ color: "#4b5563", lineHeight: 1.7 }}>
+                Units 27-29 St James's Market,
+                <br />
+                Essex St, Bradford,
+                <br />
+                BD4 7PN
+              </div>
             </div>
-            <div>
-              <strong>Sam:</strong> 07701 256670
+
+            <div
+              style={{
+                background: "#f9fafb",
+                border: "1px solid #e5e7eb",
+                borderRadius: 18,
+                padding: 22,
+              }}
+            >
+              <div style={{ fontWeight: 800, marginBottom: 8 }}>Contact Details</div>
+              <div style={{ color: "#4b5563", lineHeight: 1.8 }}>
+                <div>01274 732352</div>
+                <div>sales@tsrobinson.co.uk</div>
+                <div>Tom: 07931 380496</div>
+                <div>Sam: 07701 256670</div>
+              </div>
+            </div>
+
+            <div
+              style={{
+                background: "#f9fafb",
+                border: "1px solid #e5e7eb",
+                borderRadius: 18,
+                padding: 22,
+              }}
+            >
+              <div style={{ fontWeight: 800, marginBottom: 8 }}>Opening Hours</div>
+              <div style={{ color: "#4b5563", lineHeight: 1.8 }}>
+                <div>Mon–Fri: 5:00AM – 10:00AM</div>
+                <div>Saturday: 5:00AM – 9:30AM</div>
+                <div>Sunday: Closed</div>
+              </div>
             </div>
           </div>
 
@@ -485,7 +693,7 @@ export default function Home() {
             }}
           >
             <a
-              href="tel:07931380496"
+              href="tel:01274732352"
               style={{
                 display: "inline-block",
                 background: "#1d4ed8",
@@ -497,11 +705,11 @@ export default function Home() {
                 boxShadow: "0 8px 24px rgba(29,78,216,0.18)",
               }}
             >
-              Call Tom
+              Call Office
             </a>
 
             <a
-              href="tel:07701256670"
+              href="mailto:sales@tsrobinson.co.uk"
               style={{
                 display: "inline-block",
                 background: "#111827",
@@ -512,11 +720,11 @@ export default function Home() {
                 fontWeight: 800,
               }}
             >
-              Call Sam
+              Email Us
             </a>
 
             <a
-              href="https://wa.me/447931380496"
+              href={whatsappTom}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -534,7 +742,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/447701256670"
+              href={whatsappSam}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -554,6 +762,64 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        id="location"
+        style={{
+          padding: "0 30px 85px",
+          background: "#ffffff",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1100,
+            margin: "0 auto",
+            background: "#f9fafb",
+            border: "1px solid #e5e7eb",
+            borderRadius: 22,
+            overflow: "hidden",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+          }}
+        >
+          <div style={{ padding: 24 }}>
+            <div
+              style={{
+                fontSize: 13,
+                fontWeight: 800,
+                letterSpacing: 1,
+                textTransform: "uppercase",
+                color: "#2563eb",
+                marginBottom: 10,
+              }}
+            >
+              Location
+            </div>
+            <div style={{ fontSize: 28, fontWeight: 900, marginBottom: 8 }}>
+              Find us in Bradford
+            </div>
+            <div style={{ color: "#4b5563", lineHeight: 1.7 }}>
+              Units 27-29 St James's Market, Essex St, Bradford, BD4 7PN
+            </div>
+          </div>
+
+          <div
+            style={{
+              height: 320,
+              background:
+                "linear-gradient(135deg, #dbeafe 0%, #f8fafc 50%, #dcfce7 100%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 24,
+              textAlign: "center",
+              color: "#374151",
+              fontWeight: 700,
+            }}
+          >
+            Google Maps embed can be added here next.
+          </div>
+        </div>
+      </section>
+
       <footer
         style={{
           background: "#0f172a",
@@ -567,7 +833,7 @@ export default function Home() {
       </footer>
 
       <a
-        href="https://wa.me/447701256670"
+        href={whatsappSam}
         target="_blank"
         rel="noopener noreferrer"
         style={{
