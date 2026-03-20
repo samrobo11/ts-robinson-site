@@ -133,13 +133,24 @@ export default function Home() {
           </div>
 
           <div style={{ marginBottom: 20 }}>
-            <Image
-              src="/logo.png"
-              alt="T&S Robinson logo"
-              width={170}
-              height={170}
-              priority
-            />
+<motion.div
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.6 }}
+>
+  <motion.div
+    animate={{ rotate: [0, 2, -2, 0] }}
+    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+  >
+    <Image
+      src="/logo.png"
+      alt="T&S Robinson logo"
+      width={180}
+      height={180}
+      priority
+    />
+  </motion.div>
+</motion.div>
           </div>
 
           <h1
