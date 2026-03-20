@@ -165,6 +165,8 @@ export default function Home() {
             href="tel:07701256670"
             style={{
               display: "inline-block",
+              marginRight: 12,
+              marginBottom: 12,
               background: "#111827",
               color: "#fff",
               padding: "12px 20px",
@@ -174,6 +176,24 @@ export default function Home() {
             }}
           >
             Call Sam
+          </a>
+
+          <a
+            href="https://wa.me/447931380496"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              marginBottom: 12,
+              background: "#25D366",
+              color: "#fff",
+              padding: "12px 20px",
+              borderRadius: 10,
+              textDecoration: "none",
+              fontWeight: 700,
+            }}
+          >
+            WhatsApp Tom
           </a>
         </div>
       </section>
