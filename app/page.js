@@ -109,6 +109,7 @@ export default function Home() {
 
       <section
         id="home"
+        className="fade-up"
         style={{
           padding: "90px 30px 100px",
           textAlign: "center",
@@ -118,6 +119,7 @@ export default function Home() {
       >
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div
+            className="soft-pop"
             style={{
               display: "inline-block",
               padding: "8px 14px",
@@ -132,28 +134,18 @@ export default function Home() {
             Trusted wholesale supplier in Bradford
           </div>
 
-          <div style={{ marginBottom: 20 }}>
-<motion.div
-  initial={{ scale: 0.8, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.6 }}
->
-  <motion.div
-    animate={{ rotate: [0, 2, -2, 0] }}
-    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-  >
-    <Image
-      src="/logo.png"
-      alt="T&S Robinson logo"
-      width={180}
-      height={180}
-      priority
-    />
-  </motion.div>
-</motion.div>
+          <div style={{ marginBottom: 20 }} className="floating-logo">
+            <Image
+              src="/logo.png"
+              alt="T&S Robinson logo"
+              width={180}
+              height={180}
+              priority
+            />
           </div>
 
           <h1
+            className="fade-up"
             style={{
               fontSize: 54,
               lineHeight: 1.1,
@@ -167,6 +159,7 @@ export default function Home() {
           </h1>
 
           <p
+            className="fade-up"
             style={{
               fontSize: 20,
               color: "#4b5563",
@@ -180,6 +173,7 @@ export default function Home() {
           </p>
 
           <div
+            className="fade-up"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -190,6 +184,7 @@ export default function Home() {
           >
             <a
               href="#contact"
+              className="cta-button primary-btn"
               style={{
                 display: "inline-block",
                 background: "#1d4ed8",
@@ -208,6 +203,7 @@ export default function Home() {
               href={whatsappSam}
               target="_blank"
               rel="noopener noreferrer"
+              className="cta-button whatsapp-btn"
               style={{
                 display: "inline-block",
                 background: "#25D366",
@@ -224,6 +220,7 @@ export default function Home() {
 
             <a
               href="#products"
+              className="cta-button secondary-btn"
               style={{
                 display: "inline-block",
                 background: "#ffffff",
@@ -240,6 +237,7 @@ export default function Home() {
           </div>
 
           <div
+            className="fade-up"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
@@ -256,6 +254,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item}
+                className="glass-card hover-card"
                 style={{
                   background: "rgba(255,255,255,0.72)",
                   border: "1px solid #e5e7eb",
@@ -274,6 +273,7 @@ export default function Home() {
 
       <section
         id="about"
+        className="fade-up"
         style={{
           padding: "85px 30px",
           background: "#ffffff",
@@ -343,6 +343,7 @@ export default function Home() {
           </div>
 
           <div
+            className="hover-card"
             style={{
               background: "#f9fafb",
               border: "1px solid #e5e7eb",
@@ -365,6 +366,7 @@ export default function Home() {
               {suppliedTo.map((item) => (
                 <div
                   key={item}
+                  className="hover-card"
                   style={{
                     background: "#ffffff",
                     padding: 14,
@@ -383,6 +385,7 @@ export default function Home() {
       </section>
 
       <section
+        className="fade-up"
         style={{
           padding: "80px 30px",
           background: "#0f172a",
@@ -425,6 +428,7 @@ export default function Home() {
             {reasons.map((item) => (
               <div
                 key={item.title}
+                className="dark-hover-card"
                 style={{
                   background: "rgba(255,255,255,0.06)",
                   border: "1px solid rgba(255,255,255,0.08)",
@@ -444,6 +448,7 @@ export default function Home() {
 
       <section
         id="products"
+        className="fade-up"
         style={{
           padding: "85px 30px",
           background: "#f8fafc",
@@ -496,6 +501,7 @@ export default function Home() {
             {products.map((item) => (
               <div
                 key={item}
+                className="hover-card"
                 style={{
                   background: "#ffffff",
                   padding: 28,
@@ -516,6 +522,7 @@ export default function Home() {
 
       <section
         id="delivery"
+        className="fade-up"
         style={{
           padding: "85px 30px",
           background: "#ffffff",
@@ -563,6 +570,7 @@ export default function Home() {
           </p>
 
           <div
+            className="hover-card"
             style={{
               background: "#f9fafb",
               border: "1px solid #e5e7eb",
@@ -582,6 +590,7 @@ export default function Home() {
               href={whatsappSam}
               target="_blank"
               rel="noopener noreferrer"
+              className="cta-button whatsapp-btn"
               style={{
                 display: "inline-block",
                 background: "#25D366",
@@ -601,6 +610,7 @@ export default function Home() {
 
       <section
         id="contact"
+        className="fade-up"
         style={{
           padding: "85px 30px",
           textAlign: "center",
@@ -644,6 +654,7 @@ export default function Home() {
             }}
           >
             <div
+              className="hover-card"
               style={{
                 background: "#f9fafb",
                 border: "1px solid #e5e7eb",
@@ -662,6 +673,7 @@ export default function Home() {
             </div>
 
             <div
+              className="hover-card"
               style={{
                 background: "#f9fafb",
                 border: "1px solid #e5e7eb",
@@ -679,6 +691,7 @@ export default function Home() {
             </div>
 
             <div
+              className="hover-card"
               style={{
                 background: "#f9fafb",
                 border: "1px solid #e5e7eb",
@@ -706,6 +719,7 @@ export default function Home() {
           >
             <a
               href="tel:01274732352"
+              className="cta-button primary-btn"
               style={{
                 display: "inline-block",
                 background: "#1d4ed8",
@@ -722,6 +736,7 @@ export default function Home() {
 
             <a
               href="mailto:sales@tsrobinson.co.uk"
+              className="cta-button dark-btn"
               style={{
                 display: "inline-block",
                 background: "#111827",
@@ -739,6 +754,7 @@ export default function Home() {
               href={whatsappTom}
               target="_blank"
               rel="noopener noreferrer"
+              className="cta-button whatsapp-btn"
               style={{
                 display: "inline-block",
                 background: "#25D366",
@@ -757,6 +773,7 @@ export default function Home() {
               href={whatsappSam}
               target="_blank"
               rel="noopener noreferrer"
+              className="cta-button whatsapp-btn"
               style={{
                 display: "inline-block",
                 background: "#22c55e",
@@ -776,12 +793,14 @@ export default function Home() {
 
       <section
         id="location"
+        className="fade-up"
         style={{
           padding: "0 30px 85px",
           background: "#ffffff",
         }}
       >
         <div
+          className="hover-card"
           style={{
             maxWidth: 1100,
             margin: "0 auto",
@@ -848,6 +867,7 @@ export default function Home() {
         href={whatsappSam}
         target="_blank"
         rel="noopener noreferrer"
+        className="floating-whatsapp"
         style={{
           position: "fixed",
           bottom: 20,
@@ -864,6 +884,85 @@ export default function Home() {
       >
         WhatsApp Us
       </a>
+
+      <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
+
+        a {
+          transition: all 0.25s ease;
+        }
+
+        .fade-up {
+          animation: fadeUp 0.8s ease both;
+        }
+
+        .soft-pop {
+          animation: softPop 0.8s ease both;
+        }
+
+        .floating-logo {
+          animation: floatLogo 3.5s ease-in-out infinite;
+          display: inline-block;
+        }
+
+        .hover-card {
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .hover-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 18px 34px rgba(0,0,0,0.08);
+        }
+
+        .dark-hover-card {
+          transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .dark-hover-card:hover {
+          transform: translateY(-6px);
+          background: rgba(255,255,255,0.1);
+        }
+
+        .cta-button:hover {
+          transform: translateY(-2px) scale(1.02);
+          filter: brightness(1.03);
+        }
+
+        .floating-whatsapp:hover {
+          transform: scale(1.06);
+          filter: brightness(1.05);
+        }
+
+        @keyframes floatLogo {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeUp {
+          0% {
+            opacity: 0;
+            transform: translateY(18px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes softPop {
+          0% {
+            opacity: 0;
+            transform: scale(0.96);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </main>
   );
 }
