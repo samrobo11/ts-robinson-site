@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Gallery from "./Gallery";
 
 const products = [
   "Fresh Fruit",
@@ -98,6 +99,7 @@ export default function Home() {
           <a href="#products" style={{ textDecoration: "none", color: "#111827" }}>
             Products
           </a>
+          <a href="#photos" style={{ textDecoration: "none", color: "#111827" }}>Photos</a>
           <a href="#delivery" style={{ textDecoration: "none", color: "#111827" }}>
             Delivery
           </a>
@@ -520,6 +522,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Gallery />
 
       <section
         id="delivery"
