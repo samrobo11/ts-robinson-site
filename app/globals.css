@@ -1,5 +1,14 @@
 
         * { box-sizing: border-box; }
+        .brand-intro { position: fixed; inset: 0; z-index: 3000; display: grid; place-items: center; pointer-events: none; background: radial-gradient(ellipse at 50% 40%,#fff 0%,#f1f4f7 70%); animation: introCurtain 1.65s ease both; }
+        .brand-intro-mark { text-align: center; padding: 24px; font-family: Arial,sans-serif; animation: introZoom 1.65s cubic-bezier(.22,.65,.3,1) both; }
+        .brand-intro-mark img { display: block; width: clamp(150px,30vw,220px); height: auto; margin: 0 auto 24px; filter: drop-shadow(0 14px 28px #10243d18); }
+        .brand-intro-name { color: #10243d; font-size: clamp(24px,5vw,32px); font-weight: 800; letter-spacing: -.035em; }
+        .brand-intro-caption { color: #536378; margin-top: 10px; font-size: 13px; letter-spacing: .04em; }
+        @keyframes introZoom { 0%,30% { transform: scale(1.08); opacity: 1; filter: blur(0); } 65% { opacity: 1; filter: blur(0); } 100% { transform: scale(.72); opacity: 0; filter: blur(12px); } }
+        @keyframes introCurtain { 0%,45% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
+        @media (prefers-reduced-motion: reduce) { .brand-intro { display: none; } }
+        @media print { .brand-intro { display: none; } }
         .site-header { isolation: isolate; background: #10243d !important; color: #fff; box-shadow: 0 8px 30px #10243d24; border-bottom: 1px solid #c5ac73 !important; }
         .site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 25% 120%,#2b617655,transparent 55%),radial-gradient(ellipse at 80% -30%,#b39c6338,transparent 50%),linear-gradient(115deg,transparent 20%,#ffffff08 45%,transparent 70%); background-size: 160% 180%; animation: headerGlow 18s ease-in-out infinite alternate; }
         .site-header::after { content: ""; position: absolute; left: 30%; right: 25%; top: 0; bottom: 0; pointer-events: none; z-index: -1; background: repeating-linear-gradient(125deg,transparent 0 48px,#ffffff06 49px 50px,transparent 51px 95px); mask-image: linear-gradient(90deg,transparent,#000,transparent); }
@@ -157,4 +166,3 @@
           }
         }
       
-
