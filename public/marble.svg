@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+  <defs>
+    <filter id="stone" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.003 0.006" numOctaves="3" seed="12" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="160" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <linearGradient id="base" x2="1" y2="1">
+      <stop stop-color="#f7f8fb"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#edf2f4"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#base)" d="M0 0h1600v1200H0z"/>
+  <g fill="none" filter="url(#stone)" stroke-linecap="round">
+    <path stroke="#bdc9d5" stroke-opacity=".45" stroke-width="65" d="M-200 150C200 500 380 -160 670 260S1200 580 1800 220M-150 1080C250 570 490 1040 880 810S1210 350 1790 880"/>
+    <path stroke="#8599ae" stroke-opacity=".32" stroke-width="12" d="M-200 150C200 500 380 -160 670 260S1200 580 1800 220M-150 1080C250 570 490 1040 880 810S1210 350 1790 880"/>
+    <path stroke="#b9c8d6" stroke-opacity=".35" stroke-width="24" d="M-150 260C170 560 420 -30 680 330S1180 680 1740 340M-80 1190C260 700 580 1100 920 910S1340 540 1740 970"/>
+  </g>
+</svg>

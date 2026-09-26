@@ -1,4 +1,3 @@
-'use client';
 import Image from "next/image";
 
 const products = [
@@ -50,7 +49,8 @@ export default function Home() {
         scrollBehavior: "smooth",
       }}
     >
-      <div
+      <a className="skip-link" href="#home">Skip to content</a>
+      <header className="site-header"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div
+        <nav aria-label="Main navigation"
           style={{
             display: "flex",
             gap: 20,
@@ -101,14 +101,15 @@ export default function Home() {
           <a href="#delivery" style={{ textDecoration: "none", color: "#111827" }}>
             Delivery
           </a>
-          <a href="#contact" style={{ textDecoration: "none", color: "#111827" }}>
+          <a className="nav-contact" href="#contact" style={{ textDecoration: "none", color: "#111827" }}>
             Contact
           </a>
-        </div>
-      </div>
+        </nav>
+      </header>
 
       <section
         id="home"
+        tabIndex={-1}
         className="fade-up"
         style={{
           padding: "90px 30px 100px",
@@ -147,7 +148,7 @@ export default function Home() {
           <h1
             className="fade-up"
             style={{
-              fontSize: 54,
+              fontSize: "clamp(2rem, 6vw, 3.375rem)",
               lineHeight: 1.1,
               margin: "0 0 18px",
               fontWeight: 900,
@@ -240,7 +241,7 @@ export default function Home() {
             className="fade-up"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
               gap: 16,
               maxWidth: 980,
               margin: "30px auto 0",
@@ -284,7 +285,7 @@ export default function Home() {
             maxWidth: 1100,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "1.2fr 0.8fr",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
             gap: 30,
             alignItems: "start",
           }}
@@ -421,7 +422,7 @@ export default function Home() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
               gap: 22,
             }}
           >
@@ -494,7 +495,7 @@ export default function Home() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
               gap: 20,
             }}
           >
@@ -564,9 +565,8 @@ export default function Home() {
               marginInline: "auto",
             }}
           >
-            We offer delivery for businesses in local surrounding areas. Delivery
-            locations can be expanded or updated once you decide exactly which places
-            you want listed on the website.
+            We offer local delivery for trade customers. Send us your business postcode
+            and the produce you need, and we’ll confirm coverage and availability.
           </p>
 
           <div
@@ -608,185 +608,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="contact"
-        className="fade-up"
-        style={{
-          padding: "85px 30px",
-          textAlign: "center",
-          background: "#ffffff",
-        }}
-      >
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div
-            style={{
-              fontSize: 13,
-              fontWeight: 800,
-              letterSpacing: 1,
-              textTransform: "uppercase",
-              color: "#2563eb",
-              marginBottom: 14,
-            }}
-          >
-            Contact
+      <section id="contact" className="contact-section">
+        <div className="contact-inner">
+          <div className="section-eyebrow">A real team. A direct conversation.</div>
+          <h2>Let’s talk fresh produce.</h2>
+          <p className="section-intro">Speak to our team about orders, availability and local delivery.</p>
+          <div className="team-grid">
+            {[
+              { name: "Tom Robinson", initials: "TR", phone: "07931 380496", tel: "+447931380496", whatsapp: whatsappTom },
+              { name: "Sam Robinson", initials: "SR", phone: "07701 256670", tel: "+447701256670", whatsapp: whatsappSam },
+              { name: "Chris Wilson", initials: "CW", phone: "07552 568342", tel: "+447552568342", whatsapp: "https://wa.me/447552568342?text=Hi%20Chris%2C%20I%27m%20interested%20in%20ordering%20produce%20from%20T%26S%20Robinson" },
+            ].map((person) => (
+              <article className="team-card" key={person.name}>
+                <div className="contact-monogram" aria-hidden="true">{person.initials}</div>
+                <h3>{person.name}</h3>
+                <a className="contact-number" href={`tel:${person.tel}`}>{person.phone}</a>
+                <div className="person-actions">
+                  <a className="contact-call" href={`tel:${person.tel}`} aria-label={`Call ${person.name}`}>Call now <span aria-hidden="true">↗</span></a>
+                  {person.whatsapp && <a className="contact-message" href={person.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${person.name}`}>WhatsApp</a>}
+                </div>
+              </article>
+            ))}
           </div>
-
-          <h2 style={{ fontSize: 38, marginBottom: 15, fontWeight: 900 }}>
-            Let’s talk about your business needs
-          </h2>
-
-          <p
-            style={{
-              color: "#4b5563",
-              marginBottom: 35,
-              fontSize: 18,
-            }}
-          >
-            For enquiries, orders, deliveries, and wholesale supply.
-          </p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: 18,
-              marginBottom: 30,
-            }}
-          >
-            <div
-              className="hover-card"
-              style={{
-                background: "#f9fafb",
-                border: "1px solid #e5e7eb",
-                borderRadius: 18,
-                padding: 22,
-              }}
-            >
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Address</div>
-              <div style={{ color: "#4b5563", lineHeight: 1.7 }}>
-                Units 27-29 St James's Market,
-                <br />
-                Essex St, Bradford,
-                <br />
-                BD4 7PN
-              </div>
-            </div>
-
-            <div
-              className="hover-card"
-              style={{
-                background: "#f9fafb",
-                border: "1px solid #e5e7eb",
-                borderRadius: 18,
-                padding: 22,
-              }}
-            >
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Contact Details</div>
-              <div style={{ color: "#4b5563", lineHeight: 1.8 }}>
-                <div>01274 732352</div>
-                <div>sales@tsrobinson.co.uk</div>
-                <div>Tom: 07931 380496</div>
-                <div>Sam: 07701 256670</div>
-              </div>
-            </div>
-
-            <div
-              className="hover-card"
-              style={{
-                background: "#f9fafb",
-                border: "1px solid #e5e7eb",
-                borderRadius: 18,
-                padding: 22,
-              }}
-            >
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Opening Hours</div>
-              <div style={{ color: "#4b5563", lineHeight: 1.8 }}>
-                <div>Mon–Fri: 5:00AM – 10:00AM</div>
-                <div>Saturday: 5:00AM – 9:30AM</div>
-                <div>Sunday: Closed</div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{
-              marginTop: 30,
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: 12,
-            }}
-          >
-            <a
-              href="tel:01274732352"
-              className="cta-button primary-btn"
-              style={{
-                display: "inline-block",
-                background: "#1d4ed8",
-                color: "#fff",
-                padding: "13px 22px",
-                borderRadius: 12,
-                textDecoration: "none",
-                fontWeight: 800,
-                boxShadow: "0 8px 24px rgba(29,78,216,0.18)",
-              }}
-            >
-              Call Office
-            </a>
-
-            <a
-              href="mailto:sales@tsrobinson.co.uk"
-              className="cta-button dark-btn"
-              style={{
-                display: "inline-block",
-                background: "#111827",
-                color: "#fff",
-                padding: "13px 22px",
-                borderRadius: 12,
-                textDecoration: "none",
-                fontWeight: 800,
-              }}
-            >
-              Email Us
-            </a>
-
-            <a
-              href={whatsappTom}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button whatsapp-btn"
-              style={{
-                display: "inline-block",
-                background: "#25D366",
-                color: "#fff",
-                padding: "13px 22px",
-                borderRadius: 12,
-                textDecoration: "none",
-                fontWeight: 800,
-                boxShadow: "0 8px 24px rgba(37,211,102,0.2)",
-              }}
-            >
-              WhatsApp Tom
-            </a>
-
-            <a
-              href={whatsappSam}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button whatsapp-btn"
-              style={{
-                display: "inline-block",
-                background: "#22c55e",
-                color: "#fff",
-                padding: "13px 22px",
-                borderRadius: 12,
-                textDecoration: "none",
-                fontWeight: 800,
-                boxShadow: "0 8px 24px rgba(34,197,94,0.2)",
-              }}
-            >
-              WhatsApp Sam
-            </a>
+          <div className="office-panel">
+            <div><div className="section-eyebrow">Office enquiries</div><h3>Nicola Bannon</h3><a className="office-phone" href="tel:+441274732352">01274 732352</a></div>
+            <div><span className="office-label">Email the team</span><a href="mailto:sales@tsrobinson.co.uk">sales@tsrobinson.co.uk</a></div>
+            <div><span className="office-label">Opening hours</span><p>Mon–Fri: 5:00AM–10:00AM<br />Saturday: 5:00AM–9:30AM<br />Sunday: Closed</p></div>
           </div>
         </div>
       </section>
@@ -832,21 +679,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div
-            style={{
-              height: 320,
-              background:
-                "linear-gradient(135deg, #dbeafe 0%, #f8fafc 50%, #dcfce7 100%)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: 24,
-              textAlign: "center",
-              color: "#374151",
-              fontWeight: 700,
-            }}
-          >
-            Google Maps embed can be added here next.
+          <div className="location-directions">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Units%2027-29%20St%20James%27s%20Market%2C%20Essex%20Street%2C%20Bradford%2C%20BD4%207PN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button directions-button"
+            >
+              Open in Google Maps
+            </a>
+            <p>Visit us during our opening hours. Call the office if you need help finding the unit.</p>
           </div>
         </div>
       </section>
@@ -885,84 +727,8 @@ export default function Home() {
         WhatsApp Us
       </a>
 
-      <style>{`
-        html {
-          scroll-behavior: smooth;
-        }
 
-        a {
-          transition: all 0.25s ease;
-        }
-
-        .fade-up {
-          animation: fadeUp 0.8s ease both;
-        }
-
-        .soft-pop {
-          animation: softPop 0.8s ease both;
-        }
-
-        .floating-logo {
-          animation: floatLogo 3.5s ease-in-out infinite;
-          display: inline-block;
-        }
-
-        .hover-card {
-          transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .hover-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 18px 34px rgba(0,0,0,0.08);
-        }
-
-        .dark-hover-card {
-          transition: transform 0.25s ease, background 0.25s ease;
-        }
-
-        .dark-hover-card:hover {
-          transform: translateY(-6px);
-          background: rgba(255,255,255,0.1);
-        }
-
-        .cta-button:hover {
-          transform: translateY(-2px) scale(1.02);
-          filter: brightness(1.03);
-        }
-
-        .floating-whatsapp:hover {
-          transform: scale(1.06);
-          filter: brightness(1.05);
-        }
-
-        @keyframes floatLogo {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-          100% { transform: translateY(0px); }
-        }
-
-        @keyframes fadeUp {
-          0% {
-            opacity: 0;
-            transform: translateY(18px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes softPop {
-          0% {
-            opacity: 0;
-            transform: scale(0.96);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-      `}</style>
     </main>
   );
 }
+
